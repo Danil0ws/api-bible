@@ -2,6 +2,15 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import redis from '@/services/redis';
 
+/**
+ * @swagger
+ * /api/v1:
+ *   get:
+ *     description: Returns all books of bible
+ *     responses:
+ *       200:
+ *         description: Returns all books of bible
+ */
 export async function GET(_: Request) {
   const books = await redis.get(`books`)
   if (!books) {

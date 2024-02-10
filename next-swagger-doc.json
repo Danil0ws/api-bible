@@ -1,0 +1,11 @@
+{
+    "apiFolder": "pages/api/v1",
+    "schemaFolders": ["models"],
+    "definition": {
+      "openapi": "3.0.0",
+      "info": {
+        "title": "The Bible API",
+        "version": "0.1.0"
+      }
+    }
+  }
