@@ -3,6 +3,15 @@
 import redis from '@/services/redis';
 import { NextRequest } from 'next/server';
 
+/**
+ * @swagger
+ * /api/v1/chapters/{book}/{chapter}:
+ *   get:
+ *     description: Returns all book chapter versions
+ *     responses:
+ *       200:
+ *         description: Returns all book chapter versions
+ */
 export async function GET(_: NextRequest, { params }: { params: { slug: string} }) {
   const chapter = await redis.hgetall(`books:${params.slug[0]}:${params.slug[1]}`)
   if (!chapter) {
